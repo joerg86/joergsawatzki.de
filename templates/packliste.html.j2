@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> packliste.name  – Jörg Sawatzki</title>
-    <meta name="description" content=" packliste.beschreibung . Gesamtgewicht: ca.  gesamtgewicht  kg.">
+    <title>{{ packliste.name }} – Jörg Sawatzki</title>
+    <meta name="description" content="{{ packliste.beschreibung }}. Gesamtgewicht: ca. {{ gesamtgewicht }} kg.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html {
@@ -27,7 +27,7 @@
         <!-- Hero Image -->
         <div class="relative -mx-4 md:mx-0 md:rounded-2xl overflow-hidden mb-8 h-[400px]">
             {% if packliste.hero_bild %}
-            <img src=" packliste.hero_bild " alt=" packliste.name " class="w-full h-full object-cover">
+            <img src="{{ packliste.hero_bild }}" alt="{{ packliste.name }}" class="w-full h-full object-cover">
             {% else %}
             <!-- Fallback Gradient wenn kein Bild -->
             <div class="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900"></div>
@@ -39,13 +39,13 @@
             <!-- Content -->
             <div class="absolute bottom-0 left-0 right-0 p-8">
                 <div class="flex items-center gap-3 mb-3">
-                    <div class="text-5xl"> packliste.icon </div>
-                    <h1 class="text-4xl md:text-5xl font-bold text-white drop-shadow-lg"> packliste.name </h1>
+                    <div class="text-5xl">{{ packliste.icon }}</div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">{{ packliste.name }}</h1>
                 </div>
-                <p class="text-gray-200 text-lg mb-4 drop-shadow"> packliste.beschreibung </p>
+                <p class="text-gray-200 text-lg mb-4 drop-shadow">{{ packliste.beschreibung }}</p>
                 <div class="flex flex-wrap gap-3 text-sm text-gray-200 mb-3">
                     <span class="bg-gray-900/60 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                        <strong class="text-orange-400">Gesamtgewicht:</strong> ca.  gesamtgewicht  kg
+                        <strong class="text-orange-400">Gesamtgewicht:</strong> ca. {{ gesamtgewicht }} kg
                     </span>
                 </div>
                 <p class="text-xs text-gray-400">
@@ -59,8 +59,8 @@
             <p class="text-xs text-gray-400 uppercase tracking-wider mb-3">Schnellnavigation</p>
             <div class="flex flex-wrap gap-2">
                 {% for kategorie_name in kategorien.keys() %}
-                <a href="# kategorie_name|lower|replace(' ', '-')|replace('&', '')|replace('ä', 'ae')|replace('ö', 'oe')|replace('ü', 'ue') " class="px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm rounded-full transition-colors">
-                     kategorie_name 
+                <a href="#{{ kategorie_name|lower|replace(' ', '-')|replace('&', '')|replace('ä', 'ae')|replace('ö', 'oe')|replace('ü', 'ue') }}" class="px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm rounded-full transition-colors">
+                    {{ kategorie_name }}
                 </a>
                 {% endfor %}
             </div>
@@ -69,27 +69,27 @@
         <!-- Liste Header -->
         <div class="mb-10">
             <h2 class="text-3xl font-bold text-white mb-2">📋 Komplette Packliste</h2>
-            <p class="text-gray-400">Alle  anzahl_produkte  Produkte sortiert nach Kategorien</p>
+            <p class="text-gray-400">Alle {{ anzahl_produkte }} Produkte sortiert nach Kategorien</p>
         </div>
         
         <!-- Kategorien -->
         {% for kategorie_name, produkte in kategorien.items() %}
-        <section id=" kategorie_name|lower|replace(' ', '-')|replace('&', '')|replace('ä', 'ae')|replace('ö', 'oe')|replace('ü', 'ue') " class="mb-10 scroll-mt-4">
-            <h2 class="text-2xl font-bold text-orange-500 mb-4 pb-2 border-b border-gray-700"> kategorie_name </h2>
+        <section id="{{ kategorie_name|lower|replace(' ', '-')|replace('&', '')|replace('ä', 'ae')|replace('ö', 'oe')|replace('ü', 'ue') }}" class="mb-10 scroll-mt-4">
+            <h2 class="text-2xl font-bold text-orange-500 mb-4 pb-2 border-b border-gray-700">{{ kategorie_name }}</h2>
             <div class="space-y-2">
                 
                 {% for produkt in produkte %}
                 <details class="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden group">
                     <summary class="p-4 cursor-pointer hover:bg-gray-750 transition-colors flex justify-between items-center">
                         <div class="flex-1">
-                            <h3 class="font-semibold text-white mb-1"> produkt.name </h3>
+                            <h3 class="font-semibold text-white mb-1">{{ produkt.name }}</h3>
                             {% if produkt.produktname %}
-                            <p class="text-sm text-gray-400"> produkt.produktname </p>
+                            <p class="text-sm text-gray-400">{{ produkt.produktname }}</p>
                             {% endif %}
                         </div>
                         <div class="flex items-center gap-3">
                             {% if produkt.gewicht %}
-                            <span class="text-orange-500 font-medium"> produkt.gewicht  g</span>
+                            <span class="text-orange-500 font-medium">{{ produkt.gewicht }} g</span>
                             {% else %}
                             <span class="text-gray-500 font-medium">–</span>
                             {% endif %}
@@ -102,21 +102,21 @@
                         {% if produkt.produktname %}
                         <div class="mb-4">
                             <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Produkt</p>
-                            <p class="text-sm text-gray-300"> produkt.produktname </p>
+                            <p class="text-sm text-gray-300">{{ produkt.produktname }}</p>
                         </div>
                         {% endif %}
                         {% if produkt.notizen %}
                         <div class="mb-4">
                             <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Details</p>
-                            <p class="text-sm text-gray-300"> produkt.notizen </p>
+                            <p class="text-sm text-gray-300">{{ produkt.notizen }}</p>
                         </div>
                         {% endif %}
                         {% if produkt.kurzlink %}
-                        <a href=" produkt.kurzlink " target="_blank" class="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-medium px-4 py-2 rounded-lg transition-colors text-sm">
+                        <a href="{{ produkt.kurzlink }}" target="_blank" class="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-medium px-4 py-2 rounded-lg transition-colors text-sm">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                             </svg>
-                            Auf  produkt.anbieter  ansehen
+                            Auf {{ produkt.anbieter }} ansehen
                         </a>
                         {% else %}
                         <p class="text-sm text-gray-400 italic">Kein spezifischer Link verfügbar – generisches Produkt oder gebraucht gekauft.</p>
