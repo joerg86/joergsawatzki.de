@@ -20,15 +20,15 @@
         </a>
         
         <!-- Header -->
-        <div class="text-center mb-12">
-            <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">📦 Packlisten</h1>
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        <div class="mb-12">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">📦 Packlisten</h1>
+            <p class="text-lg sm:text-xl text-gray-400 max-w-2xl">
                 Meine erprobten Packlisten für Wanderungen und Radreisen. Alle Produkte mit Affiliate-Links zu Amazon, Bergfreunde und weiteren Partnern.
             </p>
         </div>
         
         <!-- Packlisten Grid -->
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
             
             {% for packliste in packlisten %}
             <a href="/{{ packliste.slug }}.html" class="group block bg-gray-800 rounded-2xl overflow-hidden hover:ring-2 hover:ring-orange-500 transition-all">
@@ -39,12 +39,12 @@
                     <div class="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900"></div>
                     {% endif %}
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6">
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="text-4xl">{{ packliste.icon }}</span>
-                            <h2 class="text-2xl font-bold text-white">{{ packliste.name }}</h2>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                        <div class="flex items-center gap-2 sm:gap-3 mb-2">
+                            <span class="text-3xl sm:text-4xl flex-shrink-0">{{ packliste.icon }}</span>
+                            <h2 class="text-lg sm:text-2xl font-bold text-white leading-tight">{{ packliste.name }}</h2>
                         </div>
-                        <p class="text-gray-300 text-sm line-clamp-1">{{ packliste.beschreibung }}</p>
+                        <p class="text-gray-300 text-xs sm:text-sm line-clamp-2">{{ packliste.beschreibung }}</p>
                     </div>
                 </div>
             </a>
@@ -53,20 +53,20 @@
         </div>
         
         <!-- Info Box -->
-        <div class="mt-12 bg-gray-800 border border-gray-700 rounded-xl p-6">
-            <h3 class="text-lg font-bold text-white mb-2">💡 Über die Affiliate-Links</h3>
-            <p class="text-gray-400 text-sm">
+        <div class="mt-12 bg-gray-800 border border-gray-700 rounded-xl p-4 sm:p-6">
+            <h3 class="text-base sm:text-lg font-bold text-white mb-2">💡 Über die Affiliate-Links</h3>
+            <p class="text-gray-400 text-xs sm:text-sm">
                 Diese Seiten enthalten Affiliate-Links zu Amazon, Bergfreunde und weiteren Partnern. 
                 Wenn du über diese Links kaufst, erhalte ich eine kleine Provision, ohne dass dir Mehrkosten entstehen. 
                 So unterstützt du meine Arbeit an den YouTube-Videos. Mehr Details findest du im 
-                <a href="606" class="text-orange-500 hover:text-orange-400 underline">Impressum</a>.
+                <a href="toolu_01KaQMEwdJtDikYtLQj4YLAv" class="text-orange-500 hover:text-orange-400 underline">Impressum</a>.
             </p>
         </div>
         
         <!-- Footer -->
         <p class="text-center text-gray-500 text-sm mt-12">
             © 2026 Jörg Sawatzki · 
-            <a href="606" class="hover:text-gray-400 transition-colors">Impressum</a>
+            <a href="toolu_01KaQMEwdJtDikYtLQj4YLAv" class="hover:text-gray-400 transition-colors">Impressum</a>
         </p>
         
     </div>
