@@ -8,21 +8,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 min-h-screen flex items-center justify-center px-4">
-    
+
     <div class="max-w-md w-full">
         
         <div class="bg-gray-800 rounded-2xl shadow-2xl p-8 text-center border border-gray-700">
             
-            <!-- Avatar -->
-            <img src="avatar.jpg" alt="Jörg Sawatzki" class="w-32 h-32 mx-auto mb-6 rounded-full object-cover border-2 border-orange-500">
+            <!-- Avatar (kleiner) -->
+            <img src="avatar.jpg" alt="Jörg Sawatzki" class="w-24 h-24 mx-auto mb-6 rounded-full object-cover border-2 border-orange-500">
             
             <h1 class="text-3xl font-bold text-white mb-2">Jörg Sawatzki</h1>
             <p class="text-gray-400 mb-8">Fahrrad- und Wander-Abenteuer</p>
             
             <div class="space-y-3 mb-6">
                 
-                <!-- YouTube (Main CTA) -->
-                <a href="https://youtube.com/@JoergSawatzki" target="_blank" 
+                <!-- YouTube (Main CTA - bleibt groß) -->
+                <a href="https://youtube.com/@JoergSawatzki" target="_blank"
                    class="flex items-center justify-between w-full bg-orange-600 hover:bg-orange-700 text-white py-4 px-6 rounded-lg transition-colors">
                     <div class="flex items-center gap-4">
                         <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
@@ -38,51 +38,42 @@
                     </svg>
                 </a>
                 
-                <!-- Packlisten (Affiliate - Primary Income) -->
-                <a href="https://packlisten.joergsawatzki.de" 
-                   class="flex items-center justify-between w-full bg-gray-700 hover:bg-gray-600 text-white py-4 px-6 rounded-lg transition-colors border border-gray-600">
+                <!-- Packlisten (kompakter) -->
+                <a href="https://packlisten.joergsawatzki.de"
+                   class="flex items-center justify-between w-full bg-gray-700 hover:bg-gray-600 text-white py-3 px-6 rounded-lg transition-colors border border-gray-600">
                     <div class="flex items-center gap-4">
                         <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
                         </svg>
-                        <div class="text-left">
-                            <div class="font-medium text-orange-500">Packlisten</div>
-                            <div class="text-sm opacity-80">Getestete Ausrüstung</div>
-                        </div>
+                        <span class="font-medium text-orange-500">Packlisten</span>
                     </div>
                     <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>
                 </a>
                 
-                <!-- Patreon (Secondary Income) -->
+                <!-- Patreon (kompakter) -->
                 <a href="https://patreon.com/JoergSawatzki" target="_blank"
-                   class="flex items-center justify-between w-full bg-gray-700 hover:bg-gray-600 text-white py-4 px-6 rounded-lg transition-colors border border-gray-600">
+                   class="flex items-center justify-between w-full bg-gray-700 hover:bg-gray-600 text-white py-3 px-6 rounded-lg transition-colors border border-gray-600">
                     <div class="flex items-center gap-4">
                         <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                         </svg>
-                        <div class="text-left">
-                            <div class="font-medium text-orange-500">Patreon</div>
-                            <div class="text-sm opacity-80">Early Access</div>
-                        </div>
+                        <span class="font-medium text-orange-500">Patreon</span>
                     </div>
                     <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>
                 </a>
                 
-                <!-- Komoot -->
+                <!-- Komoot (kompakter) -->
                 <a href="https://www.komoot.com/de-de/user/2242974010906" target="_blank"
-                   class="flex items-center justify-between w-full bg-gray-700 hover:bg-gray-600 text-white py-4 px-6 rounded-lg transition-colors border border-gray-600">
+                   class="flex items-center justify-between w-full bg-gray-700 hover:bg-gray-600 text-white py-3 px-6 rounded-lg transition-colors border border-gray-600">
                     <div class="flex items-center gap-4">
                         <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                         </svg>
-                        <div class="text-left">
-                            <div class="font-medium text-orange-500">Komoot</div>
-                            <div class="text-sm opacity-80">Meine Routen</div>
-                        </div>
+                        <span class="font-medium text-orange-500">Komoot</span>
                     </div>
                     <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -102,7 +93,7 @@
         
         <!-- Footer -->
         <p class="text-center text-gray-500 text-sm mt-6">
-            © 2026 Jörg Sawatzki · 
+            © 2026 Jörg Sawatzki ·
             <a href="impressum.html" class="hover:text-gray-400 transition-colors">Impressum</a>
         </p>
         
