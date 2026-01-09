@@ -14,7 +14,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     const originVideo = urlParams.get('utm_campaign') || null;
 
-    function addUtmContent() {
+    function addUTMContent() {
         document.querySelectorAll('a[href*="gear.joergsawatzki.de"]').forEach(link => {
         const url = new URL(link.href);
         url.searchParams.set('utm_content', originVideo);
