@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ packliste.name }} – Jörg Sawatzki</title>
     <meta name="description" content="{{ packliste.beschreibung }}. Gesamtgewicht: ca. {{ gesamtgewicht }} kg.">
+    <meta name="referrer" content="origin-when-cross-origin">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         html {
@@ -118,7 +120,7 @@
                         </div>
                         {% endif %}
                         {% if produkt.kurzlink %}
-                        <a href="{{ produkt.kurzlink }}" target="_blank" 
+                        <a href="{{ produkt.kurzlink }}" target="_blank" referrerpolicy="unsafe-url"
                            class="inline-flex items-center justify-center gap-2 bg-orange-600 hover:bg-orange-700 text-white font-medium px-3 sm:px-4 py-2 rounded-lg transition-colors text-xs sm:text-sm w-full sm:w-auto">
                             <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
