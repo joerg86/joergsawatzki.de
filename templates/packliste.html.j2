@@ -8,6 +8,24 @@
     <meta name="referrer" content="origin-when-cross-origin">
 
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+    // Video-ID aus URL lesen (falls von YouTube gekommen)
+    const urlParams = new URLSearchParams(window.location.search);
+    const originVideo = urlParams.get('utm_campaign') || null;
+
+    // Bei Produkt-Links anhängen
+    if (originVideo) {
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href*="gear.joergsawatzki.de"]').forEach(link => {
+        const url = new URL(link.href);
+        url.searchParams.set('utm_content', originVideo);
+        link.href = url.toString();
+        });
+    });
+    }
+    </script>
+    
     <style>
         html {
             scroll-behavior: smooth;
