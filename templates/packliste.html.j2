@@ -14,18 +14,25 @@
     const urlParams = new URLSearchParams(window.location.search);
     const originVideo = urlParams.get('utm_campaign') || null;
 
-    // Bei Produkt-Links anhängen
-    if (originVideo) {
-    document.addEventListener('DOMContentLoaded', function() {
+    function addUtmContent() {
         document.querySelectorAll('a[href*="gear.joergsawatzki.de"]').forEach(link => {
         const url = new URL(link.href);
         url.searchParams.set('utm_content', originVideo);
         link.href = url.toString();
         });
-    });
+    }
+
+    // Bei Produkt-Links anhängen
+    if (originVideo) {
+          // Warte bis DOM geladen ist
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', addUTMContent);
+        } else {
+            addUTMContent();
+        }
     }
     </script>
-    
+
     <style>
         html {
             scroll-behavior: smooth;
